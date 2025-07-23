@@ -4,3 +4,10 @@
 
 # Projeto CRUD com JavaFx + Hibernate + Mysql
 Este projeto é um projeto criado para o curso técnico de informática da escola Duque de Caxias - Sapiranga, RS
+
+## Tecnologias utilizadas no projeto
+- **Linguagem**: Java (JDK 24.0.0)
+- **API gráfica**: JavaFX 24.0.2
+- **Banco de dados**: MySQL
+- **Driver de conexão**: JDBC
+- **ORM**: Hibernate 6.4.4
