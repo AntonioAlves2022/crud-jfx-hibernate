@@ -1,0 +1,55 @@
+# .gitignore para projeto NetBeans com JavaFX, Hibernate e MySQL
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+*.orig
+*.~*
+*.swp
+
+### Diretórios de build ###
+target/
+bin/
+out/
+
+### Arquivos de configuração local ###
+*.properties
+!src/main/resources/*.properties  # Mantém arquivos de configuração do projeto
+config/application-local.properties
+config/application-dev.properties
+
+### Banco de dados ###
+# Ignora scripts SQL locais, exceto migrações
+*.sql
+!src/main/resources/db/migration/*.sql  # Mantém arquivos de migração
+
+# Arquivos de dados temporários
+*.db
+*.log
+*.trace
+
+### Hibernate ###
+# Mantém apenas o persistence.xml principal
+src/main/resources/META-INF/persistence*.xml
+!src/main/resources/META-INF/persistence.xml
+
+### JavaFX ###
+# Mantém arquivos FXML e CSS do projeto
+!src/main/resources/**/*.fxml
+!src/main/resources/**/*.css
+
+### Logs ###
+*.log
+logs/
+
+### Sistema ###
+.DS_Store
+Thumbs.db
+
+### Dependências Maven ###
+# Não é necessário ignorar lib/ pois o NetBeans com Maven usa o repositório local
