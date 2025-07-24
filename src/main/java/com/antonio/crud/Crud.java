@@ -4,7 +4,9 @@
 package com.antonio.crud;
 
 import com.antonio.crud.dao.CategoriaDao;
+import com.antonio.crud.dao.UsuarioDao;
 import com.antonio.crud.entities.Categoria;
+import com.antonio.crud.entities.Usuario;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,6 +17,7 @@ import java.util.Scanner;
 public class Crud {
     private static final Scanner scanner = new Scanner(System.in);
     private static final CategoriaDao dao = new CategoriaDao(Categoria.class);
+    private static final UsuarioDao userDao = new UsuarioDao(Usuario.class);
     
     private static void salvarCategoria(){
         System.out.println("Salvando....");
