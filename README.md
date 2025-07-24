@@ -11,3 +11,29 @@ Este projeto é um projeto criado para o curso técnico de informática da escol
 - **Banco de dados**: MySQL
 - **Driver de conexão**: JDBC
 - **ORM**: Hibernate 6.4.4
+
+## Pré-requisitos
+- JDK 24
+- MYSQL 8
+- Maven 3.9
+- Scene Builder para a construção das telas (opcional)
+
+## Instalação
+```bash
+# 1. Clone o repositório
+git clone git@github.com:AntonioAlves2022/crud-jfx-hibernate.git
+# 2. Acesse a pasta do projeto
+cd pasta-do-projeto
+# 3. Instale as dependências
+mvn install
+
+# Configure o banco de dados
+# 1. Crie um banco chamado crud
+# 2. Altere as credenciais de acesso no arquivo persistence.xml
+```
+
+## Licença
+Este projeto éstá sob a licença MIT
+<div align="center">
+Feito com ❤️por [Antonio A. Alves](https://github.com/AntonioAlves2022)
+</div>
