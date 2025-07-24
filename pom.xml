@@ -13,7 +13,7 @@
         <javafx.version>24.0.2</javafx.version>
         <hibernate.version>6.4.4.Final</hibernate.version>
         <mysql.connector.version>8.0.33</mysql.connector.version>
-        <exec.mainClass>com.antonio.crud.Crud</exec.mainClass>
+        <exec.mainClass>com.antonio.crud.MainApp</exec.mainClass>
     </properties>
     
     <dependencies>
@@ -63,7 +63,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.antonio.crud.Crud</mainClass>
+                    <mainClass>com.antonio.crud.MainApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
