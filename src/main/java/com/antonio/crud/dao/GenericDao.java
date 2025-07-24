@@ -55,7 +55,7 @@ public abstract class GenericDao<T, ID> implements IGenercDao<T, ID> {
         EntityManager em = JPAUtils.getEntityManager();
         try {
             return em
-                    .createQuery("FROM " + entityClass.getSimpleName(),
+                    .createQuery("FROM " + entityClass.getSimpleName()+" ORDER BY id",
                             entityClass).getResultList();
         } finally {
             em.close();

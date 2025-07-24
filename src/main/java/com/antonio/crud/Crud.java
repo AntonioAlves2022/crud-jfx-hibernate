@@ -5,6 +5,7 @@ package com.antonio.crud;
 
 import com.antonio.crud.dao.CategoriaDao;
 import com.antonio.crud.entities.Categoria;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -27,18 +28,78 @@ public class Crud {
     
     private static void buscarPorId(){
         System.out.println("Busca por Id....");
+        System.out.print("Digite o id da categoria:");
+        long id = scanner.nextLong();
+        scanner.nextLine();
+        
+        Categoria cat = dao.findById(id);
+        
+        if(cat != null){
+            System.out.println("Categoria enontrada.");
+            System.out.println("Id: "+ cat.getId());
+            System.out.println("Categoria: "+ cat.getNome());
+        }else{
+            System.out.println("Nenhum registro encontrado");
+        }
     }
     
     private static void listarTudo(){
         System.out.println("listando tudo....");
+        List<Categoria> categorias = dao.findAll();
+        
+        if(categorias.isEmpty()){
+            System.out.println("Sem resultados");
+        }else{
+            System.out.println("Categorias encontradas: "+ categorias.size());
+            System.out.println("==============================");
+            categorias.forEach(c ->{
+                System.out.println("Id:"+ c.getId());
+                System.out.println("Categoria:"+ c.getNome());
+                System.out.println("==============================");
+            });
+        }
     }
     
     private static void atualizarCategoria(){
         System.out.println("Atualizando....");
+        System.out.print("Digite o id que deseja alterar:");
+        Long id = scanner.nextLong();
+        scanner.nextLine();
+        Categoria cat = dao.findById(id);
+        
+        if(cat == null){
+            System.out.println("Categoria não encontrada");
+            return;
+        }
+        
+        System.out.println("Nome atual: "+ cat.getNome());
+        System.out.print("Novo nome (pressione enter para mater):");
+        String novoNome = scanner.nextLine();
+        
+        if(!novoNome.isEmpty()){
+            cat.setNome(novoNome);
+        }
+        
+        dao.update(cat);
+        System.out.println("Nome atualizado");
+        
     }
     
     private static void removerCategoria(){
         System.out.println("removendo....");
+        System.out.print("Digite o id que deseja remover:");
+        Long id = scanner.nextLong();
+        scanner.nextLine();
+        Categoria cat = dao.findById(id);
+        
+         if(cat == null){
+            System.out.println("Categoria não encontrada");
+            return;
+        }
+         
+         dao.delete(cat);
+         System.out.println("A categoria foi removida com sucesso!");
+        
     }
     
     
@@ -51,7 +112,7 @@ public class Crud {
             System.out.println("4. Atualizar uma categoria");
             System.out.println("5. Remover uma categoria");
             System.out.println("6. Sair");
-            System.out.println("Digite a opção desejada: ");
+            System.out.print("Digite um item do menu: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
             
@@ -75,8 +136,7 @@ public class Crud {
                     return;
                 default:
                     System.out.println("Opção inválida");
-                    break;
-                
+                    break;    
             }
         }
     }

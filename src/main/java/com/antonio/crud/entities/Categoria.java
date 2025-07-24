@@ -10,13 +10,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 /**
  *
  * @author Professor
  */
 @Entity
-@Table(name = "categorias")
+@Table(name = "categorias",
+        uniqueConstraints =
+                @UniqueConstraint(name = "UK_CATEGORIA_NOME", 
+                        columnNames = {"nome"}))
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
