@@ -31,9 +31,10 @@ mvn install
 # 1. Crie um banco chamado crud
 # 2. Altere as credenciais de acesso no arquivo persistence.xml
 ```
-
+---
 ## Licença
 Este projeto éstá sob a licença MIT
+---
 <div align="center">
 Feito com ❤️por [Antonio A. Alves](https://github.com/AntonioAlves2022)
 </div>
